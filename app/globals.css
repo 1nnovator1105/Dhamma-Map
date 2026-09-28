@@ -1,0 +1,216 @@
+@import "tailwindcss";
+
+/*
+ * 색상은 모두 CSS 변수(의미 기반 토큰)로 정의한다.
+ * 컴포넌트에서는 색상 값을 직접 쓰지 않고 bg-surface, text-muted 같은 토큰 클래스만 사용한다.
+ */
+:root {
+  --background: #fcfcfa;
+  --surface: #f3f3ef;
+  --surface-raised: #ffffff;
+  --foreground: #1d1d1b;
+  --muted: #5c5c57;
+  --border: #e3e2dc;
+  --border-strong: #cfcec6;
+  --accent: #2e5c61;
+  --accent-hover: #234a4e;
+  --accent-soft: #e5eeed;
+  --accent-contrast: #ffffff;
+  --caution: #933a2c;
+  --caution-soft: #f7eae6;
+  --affirm: #2d6443;
+  --affirm-soft: #e7f1ea;
+  --focus-ring: #2e5c61;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #141413;
+    --surface: #1d1d1b;
+    --surface-raised: #232321;
+    --foreground: #ecebe6;
+    --muted: #a9a8a0;
+    --border: #2f2f2c;
+    --border-strong: #454541;
+    --accent: #8fc3c5;
+    --accent-hover: #a9d3d4;
+    --accent-soft: #1d2f30;
+    --accent-contrast: #141413;
+    --caution: #eba396;
+    --caution-soft: #33201c;
+    --affirm: #93cda6;
+    --affirm-soft: #1b2c21;
+    --focus-ring: #8fc3c5;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-contrast: var(--accent-contrast);
+  --color-caution: var(--caution);
+  --color-caution-soft: var(--caution-soft);
+  --color-affirm: var(--affirm);
+  --color-affirm-soft: var(--affirm-soft);
+
+  --font-sans:
+    "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
+    system-ui, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic",
+    sans-serif;
+  /* 한자 표기용: Pretendard에는 한자 글리프가 없으므로 한자를 지원하는 시스템 글꼴로 넘긴다 */
+  --font-hanja:
+    "Apple SD Gothic Neo", "Noto Sans CJK KR", "Noto Sans KR", "Malgun Gothic",
+    "Hiragino Sans", sans-serif;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    /* 한국어 문장이 어절 중간에서 끊기지 않도록 한다 */
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    text-rendering: optimizeLegibility;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background: var(--accent-soft);
+  }
+}
+
+/*
+ * 개념·주제 문서 본문(MDX) 타이포그래피.
+ * 본문 텍스트 폭은 article 컨테이너에서 제한한다 (약 720px).
+ */
+@layer components {
+  .article-body {
+    font-size: 1.0625rem;
+    line-height: 1.85;
+    color: var(--foreground);
+  }
+
+  .article-body > * + * {
+    margin-top: 1.25em;
+  }
+
+  .article-body > h2 {
+    margin-top: 3rem;
+    padding-top: 0.25rem;
+    font-size: 1.5rem;
+    line-height: 1.4;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  .article-body > h3 {
+    margin-top: 2rem;
+    font-size: 1.1875rem;
+    line-height: 1.5;
+    font-weight: 650;
+  }
+
+  .article-body > h2 + *,
+  .article-body > h3 + * {
+    margin-top: 0.75em;
+  }
+
+  .article-body > p {
+    color: var(--foreground);
+  }
+
+  .article-body strong {
+    font-weight: 650;
+  }
+
+  .article-body a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+
+  .article-body a:hover {
+    color: var(--accent-hover);
+  }
+
+  .article-body > ul,
+  .article-body > ol,
+  .article-body li > ul,
+  .article-body li > ol {
+    padding-left: 1.4em;
+  }
+
+  .article-body > ul,
+  .article-body li > ul {
+    list-style: disc;
+  }
+
+  .article-body > ol,
+  .article-body li > ol {
+    list-style: decimal;
+  }
+
+  .article-body > ul > li + li,
+  .article-body > ol > li + li {
+    margin-top: 0.4em;
+  }
+
+  .article-body > ul > li::marker,
+  .article-body > ol > li::marker {
+    color: var(--muted);
+  }
+
+  .article-body > blockquote {
+    border-left: 3px solid var(--border-strong);
+    padding-left: 1rem;
+    color: var(--muted);
+  }
+
+  .article-body > hr {
+    margin: 2.5rem 0;
+    border-color: var(--border);
+  }
+
+  .article-body > table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9375rem;
+  }
+
+  .article-body > table th,
+  .article-body > table td {
+    border-bottom: 1px solid var(--border);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .article-body > table th {
+    font-weight: 650;
+    color: var(--muted);
+  }
+
+  .hanja {
+    font-family: var(--font-hanja);
+  }
+}

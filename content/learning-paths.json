@@ -1,0 +1,14 @@
+[
+  {
+    "slug": "first-steps",
+    "title": "처음이라면",
+    "description": "불교를 처음 접한다면 이 순서로 읽어 보세요. 괴로움을 바라보는 방식에서 시작해, 세상을 보는 관점으로 넓혀 갑니다.",
+    "conceptSlugs": [
+      "four-noble-truths",
+      "dependent-origination",
+      "impermanence",
+      "non-self",
+      "noble-eightfold-path"
+    ]
+  }
+]
