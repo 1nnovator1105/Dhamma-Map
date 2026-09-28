@@ -4,6 +4,14 @@ import { DependentOriginationDiagram } from "@/components/diagrams/DependentOrig
 import { EightfoldPathDiagram } from "@/components/diagrams/EightfoldPathDiagram";
 import { FourNobleTruthsDiagram } from "@/components/diagrams/FourNobleTruthsDiagram";
 import { SixParamitasDiagram } from "@/components/diagrams/SixParamitasDiagram";
+import { BoatCrossingIllustration } from "@/components/illustrations/BoatCrossingIllustration";
+import { ChariotPartsIllustration } from "@/components/illustrations/ChariotPartsIllustration";
+import { ConditionsIllustration } from "@/components/illustrations/ConditionsIllustration";
+import { ConvergingPathsIllustration } from "@/components/illustrations/ConvergingPathsIllustration";
+import { RiverIllustration } from "@/components/illustrations/RiverIllustration";
+import { ScratchedPhoneIllustration } from "@/components/illustrations/ScratchedPhoneIllustration";
+import { SeedGrowthIllustration } from "@/components/illustrations/SeedGrowthIllustration";
+import { UnreadMessageIllustration } from "@/components/illustrations/UnreadMessageIllustration";
 
 import { ConceptLink } from "./ConceptLink";
 import { ConceptSummary } from "./ConceptSummary";
@@ -38,5 +46,13 @@ export function createMdxComponents({ relatedConceptSlugs }: MdxComponentContext
     EightfoldPathDiagram,
     SixParamitasDiagram,
     DependentOriginationDiagram,
+    SeedGrowthIllustration,
+    ConditionsIllustration,
+    RiverIllustration,
+    ChariotPartsIllustration,
+    BoatCrossingIllustration,
+    ConvergingPathsIllustration,
+    ScratchedPhoneIllustration,
+    UnreadMessageIllustration,
   };
 }

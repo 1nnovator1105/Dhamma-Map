@@ -30,7 +30,8 @@ content/
   learning-paths.json   학습 경로 (홈의 '처음이라면')
 components/
   content/              MDX 안에서 쓰는 콘텐츠 컴포넌트 (+ mdx-components.tsx 등록부)
-  diagrams/             개념별 시각화 컴포넌트
+  diagrams/             개념별 구조 다이어그램
+  illustrations/        본문 비유를 그린 SVG 삽화 (docs/illustration-guide.md)
   layout/ concepts/ search/ map/
 lib/content/            MDX 읽기·frontmatter 검증(Zod)·검색 인덱스
 public/concepts/<slug>/ 문서에 쓰는 이미지 (WebP 권장)
@@ -97,7 +98,8 @@ question: 모든 것은 어떻게 서로 영향을 주고받을까?   # 있으�
 | `<ImageWithCaption src="/concepts/<slug>/x.webp" alt="…" caption="…" />` | 설명용 이미지 (기본 비율 16:9, `width`·`height`로 변경) |
 | `<ConceptLink slug="non-self" />` | 본문 속 다른 개념 링크 (텍스트 생략 시 개념 제목) |
 | `<RelatedConcepts relationDescriptions={{ "non-self": "…" }} />` | 관련 개념 카드. frontmatter `related`가 자동으로 들어가고, 관계 설명은 선택 |
-| `<FourNobleTruthsDiagram />` `<EightfoldPathDiagram />` `<SixParamitasDiagram />` `<DependentOriginationDiagram />` | 개념별 시각화 |
+| `<FourNobleTruthsDiagram />` `<EightfoldPathDiagram />` `<SixParamitasDiagram />` `<DependentOriginationDiagram />` | 개념별 구조 다이어그램 |
+| `<SeedGrowthIllustration caption="…" />` 등 `…Illustration` | 본문의 비유·예시를 그린 삽화. 목록과 제작 규칙은 [`docs/illustration-guide.md`](./docs/illustration-guide.md) |
 
 새 컴포넌트는 `components/content/mdx-components.tsx`에 등록해야 MDX에서 쓸 수 있습니다.
 

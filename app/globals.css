@@ -21,6 +21,23 @@
   --affirm: #2d6443;
   --affirm-soft: #e7f1ea;
   --focus-ring: #2e5c61;
+
+  /* 삽화 전용 토큰 (docs/illustration-guide.md) */
+  --illustration-sky: #eef2ef;
+  --illustration-land: #dfe7df;
+  --illustration-land-deep: #c9d6ca;
+  --illustration-ground: #dccfb3;
+  --illustration-ground-deep: #c0ac86;
+  --illustration-water: #6f9ea3;
+  --illustration-water-deep: #3f7479;
+  --illustration-water-light: #f1f6f4;
+  --illustration-leaf: #5f8f6a;
+  --illustration-sun: #e3b764;
+  --illustration-wood: #b98d5f;
+  --illustration-wood-deep: #7d5a38;
+  --illustration-device: #2f3634;
+  --illustration-object: #ffffff;
+  --illustration-line: #6b7a76;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -41,6 +58,22 @@
     --affirm: #93cda6;
     --affirm-soft: #1b2c21;
     --focus-ring: #8fc3c5;
+
+    --illustration-sky: #1b2120;
+    --illustration-land: #222b28;
+    --illustration-land-deep: #2b3632;
+    --illustration-ground: #4d4434;
+    --illustration-ground-deep: #3b3428;
+    --illustration-water: #3e6a6e;
+    --illustration-water-deep: #5f9ba0;
+    --illustration-water-light: #b9d3d1;
+    --illustration-leaf: #6fa27b;
+    --illustration-sun: #d6a955;
+    --illustration-wood: #9a7650;
+    --illustration-wood-deep: #c29a6d;
+    --illustration-device: #0f1312;
+    --illustration-object: #2c3431;
+    --illustration-line: #93a29d;
   }
 }
 
@@ -60,6 +93,22 @@
   --color-caution-soft: var(--caution-soft);
   --color-affirm: var(--affirm);
   --color-affirm-soft: var(--affirm-soft);
+
+  --color-illustration-sky: var(--illustration-sky);
+  --color-illustration-land: var(--illustration-land);
+  --color-illustration-land-deep: var(--illustration-land-deep);
+  --color-illustration-ground: var(--illustration-ground);
+  --color-illustration-ground-deep: var(--illustration-ground-deep);
+  --color-illustration-water: var(--illustration-water);
+  --color-illustration-water-deep: var(--illustration-water-deep);
+  --color-illustration-water-light: var(--illustration-water-light);
+  --color-illustration-leaf: var(--illustration-leaf);
+  --color-illustration-sun: var(--illustration-sun);
+  --color-illustration-wood: var(--illustration-wood);
+  --color-illustration-wood-deep: var(--illustration-wood-deep);
+  --color-illustration-device: var(--illustration-device);
+  --color-illustration-object: var(--illustration-object);
+  --color-illustration-line: var(--illustration-line);
 
   --font-sans:
     "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
